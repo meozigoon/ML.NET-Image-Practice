@@ -1,3 +1,12 @@
+using ML_NET_Image_Practice;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using System.Linq;
+using Microsoft.ML;
+using Microsoft.ML.Data;
+
 namespace ML.NET_Image_Practice
 {
     public partial class Form1 : Form
@@ -38,11 +47,24 @@ namespace ML.NET_Image_Practice
             }
         }
 
-        private void AnalysisButton_Click(object sender, EventArgs e)
+        private void ClassifyButton_Click(object sender, EventArgs e)
         {
             if (imagePath != "")
             {
+                List<ImageModel.ModelInput> sampleImages = new()
+                {
+                    new ImageModel.ModelInput
+                    {
+                        ImageSource = File.ReadAllBytes(imagePath),
+                    }
+                };
 
+                sampleImages.ForEach(image =>
+                {
+                    // Fix: Correctly handle the output of the Predict method
+                    ImageModel.ModelOutput predictionResult = ImageModel.Predict(image);
+                    ResultLabel.Text = $"Predicted Label: {predictionResult.PredictedLabel}\nCat: {predictionResult.Score[0]}\nDog: {predictionResult.Score[1]}";
+                });
             }
         }
     }

@@ -32,7 +32,7 @@
             Image = new PictureBox();
             ResultLabel = new Label();
             FileSelectButton = new Button();
-            AnalysisButton = new Button();
+            ClassifyButton = new Button();
             ((System.ComponentModel.ISupportInitialize)Image).BeginInit();
             SuspendLayout();
             // 
@@ -72,23 +72,23 @@
             FileSelectButton.UseVisualStyleBackColor = true;
             FileSelectButton.Click += FileSelectButton_Click;
             // 
-            // AnalysisButton
+            // ClassifyButton
             // 
-            AnalysisButton.Font = new Font("맑은 고딕", 12F);
-            AnalysisButton.Location = new Point(12, 480);
-            AnalysisButton.Name = "AnalysisButton";
-            AnalysisButton.Size = new Size(462, 69);
-            AnalysisButton.TabIndex = 3;
-            AnalysisButton.Text = "Analysis";
-            AnalysisButton.UseVisualStyleBackColor = true;
-            AnalysisButton.Click += AnalysisButton_Click;
+            ClassifyButton.Font = new Font("맑은 고딕", 12F);
+            ClassifyButton.Location = new Point(12, 480);
+            ClassifyButton.Name = "ClassifyButton";
+            ClassifyButton.Size = new Size(462, 69);
+            ClassifyButton.TabIndex = 3;
+            ClassifyButton.Text = "Classify";
+            ClassifyButton.UseVisualStyleBackColor = true;
+            ClassifyButton.Click += ClassifyButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(486, 668);
-            Controls.Add(AnalysisButton);
+            Controls.Add(ClassifyButton);
             Controls.Add(FileSelectButton);
             Controls.Add(ResultLabel);
             Controls.Add(Image);
@@ -105,6 +105,6 @@
         private PictureBox Image;
         private Label ResultLabel;
         private Button FileSelectButton;
-        private Button AnalysisButton;
+        private Button ClassifyButton;
     }
 }
