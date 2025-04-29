@@ -1,0 +1,49 @@
+namespace ML.NET_Image_Practice
+{
+    public partial class Form1 : Form
+    {
+        string imagePath = "";
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void FileSelectButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Title = "이미지 파일 선택";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            openFileDialog.Multiselect = false;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // 기존 이미지 해제
+                    if (Image.Image != null)
+                    {
+                        Image.Image.Dispose();
+                    }
+
+                    // 선택한 파일로 이미지 로드
+                    Image.Image = new Bitmap(openFileDialog.FileName);
+                    imagePath = openFileDialog.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"이미지를 불러오는 도중 오류가 발생했습니다.\n\n{ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void AnalysisButton_Click(object sender, EventArgs e)
+        {
+            if (imagePath != "")
+            {
+
+            }
+        }
+    }
+}
