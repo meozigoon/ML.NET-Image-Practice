@@ -16,6 +16,7 @@ namespace ML.NET_Image_Practice
         public Form1()
         {
             InitializeComponent();
+            ResultLabel.Text = "Predicted Label:\nCat:\nDog:";
         }
 
         private void FileSelectButton_Click(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace ML.NET_Image_Practice
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.Title = "이미지 파일 선택";
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            //openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             openFileDialog.Multiselect = false;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)

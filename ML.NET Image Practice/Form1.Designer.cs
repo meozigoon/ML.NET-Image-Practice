@@ -40,7 +40,7 @@
             // 
             openFileDialog1.FileName = "File Name";
             openFileDialog1.Filter = "이미지 파일 (*.png;*.jpg;*.jpeg;*.bmp;*.gif)|*.png;*.jpg;*.jpeg;*.bmp;*.gif";
-            openFileDialog1.InitialDirectory = "C:";
+            openFileDialog1.InitialDirectory = "D:";
             // 
             // Image
             // 
@@ -57,9 +57,9 @@
             ResultLabel.Font = new Font("맑은 고딕", 12F);
             ResultLabel.Location = new Point(12, 563);
             ResultLabel.Name = "ResultLabel";
-            ResultLabel.Size = new Size(78, 32);
+            ResultLabel.Size = new Size(71, 32);
             ResultLabel.TabIndex = 1;
-            ResultLabel.Text = "label1";
+            ResultLabel.Text = "Label";
             // 
             // FileSelectButton
             // 
@@ -93,7 +93,7 @@
             Controls.Add(ResultLabel);
             Controls.Add(Image);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Image Classification";
             ((System.ComponentModel.ISupportInitialize)Image).EndInit();
             ResumeLayout(false);
             PerformLayout();
